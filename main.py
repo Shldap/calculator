@@ -74,7 +74,34 @@ def run_calculator_gui():
 
     window = tk.Tk()
     window.title("Calculator")
-    # ... GUI code ...
+    
+# Create the input fields and labels
+label_num1 = tk.Label(window, text="Number 1:")
+label_num1.pack()
+entry_num1 = tk.Entry(window)
+entry_num1.pack()
+
+label_operator = tk.Label(window, text="Operator:")
+label_operator.pack()
+operators = ['add', 'subtract', 'multiply', 'divide', 'pow', 'sqrt', 'sin', 'cos', 'tan']
+dropdown_operator = tk.StringVar(window)
+dropdown_operator.set(operators[0])
+operator_menu = tk.OptionMenu(window, dropdown_operator, *operators)
+operator_menu.pack()
+
+label_num2 = tk.Label(window, text="Number 2:")
+label_num2.pack()
+entry_num2 = tk.Entry(window)
+entry_num2.pack()
+
+# Create the calculate button
+button_calculate = tk.Button(window, text="Calculate", command=calculate)
+button_calculate.pack()
+
+# Create the result label
+label_result = tk.Label(window)
+label_result.pack()
+
 
     window.mainloop()
 
